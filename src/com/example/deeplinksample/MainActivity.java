@@ -1,24 +1,20 @@
 package com.example.deeplinksample;
 
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
+import android.app.Activity;
+import android.app.Fragment;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.os.Build;
 import android.preference.PreferenceManager;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
     // Constants
     private static final String MARKET_SCHEME_PREFIX = "market://";
     private static final String STORE_WEB_URL_PREFIX = "http://store.ovi.mobi/content/";
@@ -33,7 +29,7 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
+            getFragmentManager().beginTransaction()
                     .add(R.id.container, new PlaceholderFragment()).commit();
         }
     }
