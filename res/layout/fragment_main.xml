@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.deeplinksample.MainActivity$PlaceholderFragment" >
+
+    <TextView
+        android:id="@+id/appDescriptionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_description" />
+
+    <TextView
+        android:id="@+id/marketSchemeDescriptionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/appDescriptionTextView"
+        android:layout_below="@+id/appDescriptionTextView"
+        android:layout_marginTop="15dp"
+        android:text="@string/market_scheme_description" />
+
+    <EditText
+        android:id="@+id/marketSchemeQueryEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/marketSchemeDescriptionTextView"
+        android:layout_below="@+id/marketSchemeDescriptionTextView"
+        android:ems="10"
+        android:inputType="textMultiLine">
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/marketSchemeGoButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/marketSchemeQueryEditText"
+        android:layout_below="@+id/marketSchemeQueryEditText"
+        android:text="@string/go" />
+
+    <TextView
+        android:id="@+id/storeWebUrlDescriptionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/marketSchemeGoButton"
+        android:layout_below="@+id/marketSchemeGoButton"
+        android:layout_marginTop="14dp"
+        android:text="@string/store_web_url_description" />
+
+    <EditText
+        android:id="@+id/contentIdEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/storeWebUrlDescriptionTextView"
+        android:layout_below="@+id/storeWebUrlDescriptionTextView"
+        android:ems="10"
+        android:inputType="numberSigned" />
+
+    <Button
+        android:id="@+id/storeWebUrlGoButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/contentIdEditText"
+        android:layout_below="@+id/contentIdEditText"
+        android:text="@string/go" />
+
+</RelativeLayout>

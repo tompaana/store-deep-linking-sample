@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Deep link sample</string>
+    <string name="app_description">This is a sample app demonstrating the store deep linking.</string>
+    <string name="action_settings">Settings</string>
+    <string name="market_scheme_description">Market scheme - The entered query string below will be inserted after \"market://\".</string>
+    <string name="store_web_url_description">Store web URL - The content item ID entered below will be inserted after \"http://store.ovi.mobi/content/\".</string>
+    <string name="go">Go</string>
+
+</resources>
