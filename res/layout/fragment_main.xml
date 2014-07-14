@@ -43,30 +43,4 @@
         android:layout_below="@+id/marketSchemeQueryEditText"
         android:text="@string/go" />
 
-    <TextView
-        android:id="@+id/storeWebUrlDescriptionTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/marketSchemeGoButton"
-        android:layout_below="@+id/marketSchemeGoButton"
-        android:layout_marginTop="14dp"
-        android:text="@string/store_web_url_description" />
-
-    <EditText
-        android:id="@+id/contentIdEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/storeWebUrlDescriptionTextView"
-        android:layout_below="@+id/storeWebUrlDescriptionTextView"
-        android:ems="10"
-        android:inputType="numberSigned" />
-
-    <Button
-        android:id="@+id/storeWebUrlGoButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/contentIdEditText"
-        android:layout_below="@+id/contentIdEditText"
-        android:text="@string/go" />
-
 </RelativeLayout>

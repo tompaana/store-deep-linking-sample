@@ -17,11 +17,8 @@ import android.preference.PreferenceManager;
 public class MainActivity extends Activity {
     // Constants
     private static final String MARKET_SCHEME_PREFIX = "market://";
-    private static final String STORE_WEB_URL_PREFIX = "http://store.ovi.mobi/content/";
     private static final String MARKET_SCHEME_QUERY_STRING_ID = "market_scheme_query_string";
-    private static final String STORE_WEB_URL_CONTENT_ID = "store_web_url_content_id";
     private static final String DEFAULT_MARKET_SCHEME_QUERY_STRING = "details?id=com.nokia.app.mixradio.client";
-    private static final String DEFAULT_STORE_WEB_URL_CONTENT_ID = "488076";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,20 +43,12 @@ public class MainActivity extends Activity {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         final EditText queryEditText = (EditText) findViewById(R.id.marketSchemeQueryEditText);
         preferences.edit().putString(MARKET_SCHEME_QUERY_STRING_ID, queryEditText.getText().toString()).commit();
-        final EditText contentIdEditText = (EditText) findViewById(R.id.contentIdEditText);
-        preferences.edit().putString(STORE_WEB_URL_CONTENT_ID, contentIdEditText.getText().toString()).commit();
         super.onPause();
     }
 
     private void launchMarketScheme(String queryString) {
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse(MARKET_SCHEME_PREFIX + queryString));
-        startActivity(intent);
-    }
-
-    private void launchStoreWebUrl(String contentIdString) {
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse(STORE_WEB_URL_PREFIX + contentIdString));
         startActivity(intent);
     }
 
@@ -72,19 +61,9 @@ public class MainActivity extends Activity {
             }
         });
         
-        final Button storeWebUrlGoButton = (Button) findViewById(R.id.storeWebUrlGoButton);
-        storeWebUrlGoButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                final EditText contentIdEditText = (EditText) findViewById(R.id.contentIdEditText);
-                launchStoreWebUrl(contentIdEditText.getText().toString());
-            }
-        });
-        
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         final EditText queryEditText = (EditText) findViewById(R.id.marketSchemeQueryEditText);
         queryEditText.setText(preferences.getString(MARKET_SCHEME_QUERY_STRING_ID, DEFAULT_MARKET_SCHEME_QUERY_STRING));
-        final EditText contentIdEditText = (EditText) findViewById(R.id.contentIdEditText);
-        contentIdEditText.setText(preferences.getString(STORE_WEB_URL_CONTENT_ID, DEFAULT_STORE_WEB_URL_CONTENT_ID));
     }
     /**
      * A placeholder fragment containing a simple view.
